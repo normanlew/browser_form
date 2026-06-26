@@ -26,7 +26,11 @@
             <label for="pass_confirm">Confirm Password: </label>
             <input type="password" id="pass_confirm" name="pass_confirm" required />
 
-            <button>Submit</button>
+            <button onclick="checkIfValid()">Submit</button>
+
+            <div id="err_msg">
+
+            </div>
         </form>
     </div>
 </body>

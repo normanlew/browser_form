@@ -117,3 +117,35 @@ pass_confirm.addEventListener("input", (event) => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 });
+
+function checkIfValid() {
+    const div_error = document.getElementById("err_msg");
+    div_error.innerHTML = "";
+ 
+    if (email.validity.valueMissing) {
+        let p_email_valueMissing = document.createElement("p");
+        p_email_valueMissing.innerHTML = "Email is missing";
+        div_error.appendChild(p_email_valueMissing);
+    }
+    if (email.validity.typeMismatch) {
+        let p_email_typeMisMatch = document.createElement("p");
+        p_email_typeMisMatch.innerHTML = "Email is not in the correct format";
+        div_error.appendChild(p_email_typeMisMatch);
+    }
+    if (email.validity.tooShort) {
+        let p_email_tooShort = document.createElement("p");
+        p_email_tooShort.innerHTML = "Email is not long enough";
+        div_error.appendChild(p_email_tooShort);
+    }
+
+    if (country.validity.valueMissing) {
+        let p_country_valueMissing = document.createElement("p");
+        p_country_valueMissing.innerHTML = "country is missing";
+        div_error.appendChild(p_country_valueMissing);
+    }
+    if (country.validity.tooShort) {
+        let p_country_tooShort = document.createElement("p");
+        p_country_tooShort.innerHTML = "country is not long enough";
+        div_error.appendChild(p_country_tooShort);
+    }
+}
