@@ -3,3 +3,19 @@ form {
     flex-direction: column;
     gap: 10px;
 }
+
+input {
+    width: 300px;
+}
+
+button {
+    width: 80px;
+}
+
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2px solid black;
+}
