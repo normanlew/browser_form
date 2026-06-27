@@ -140,12 +140,45 @@ function checkIfValid() {
 
     if (country.validity.valueMissing) {
         let p_country_valueMissing = document.createElement("p");
-        p_country_valueMissing.innerHTML = "country is missing";
+        p_country_valueMissing.innerHTML = "Country is missing";
         div_error.appendChild(p_country_valueMissing);
     }
     if (country.validity.tooShort) {
         let p_country_tooShort = document.createElement("p");
-        p_country_tooShort.innerHTML = "country is not long enough";
+        p_country_tooShort.innerHTML = "Country is not long enough";
         div_error.appendChild(p_country_tooShort);
+    }
+
+    if (postal.validity.valueMissing) {
+        let p_postal_valueMissing = document.createElement("p");
+        p_postal_valueMissing.innerHTML = "Postal is missing";
+        div_error.appendChild(p_postal_valueMissing);
+    }
+    if (postal.validity.tooShort) {
+        let p_postal_tooShort = document.createElement("p");
+        p_postal_tooShort.innerHTML = "Postal is not long enough";
+        div_error.appendChild(p_postal_tooShort);
+    }
+
+    if (pass.validity.valueMissing) {
+        let p_pass_valueMissing = document.createElement("p");
+        p_pass_valueMissing.innerHTML = "Password is missing";
+        div_error.appendChild(p_pass_valueMissing);
+    }
+    if (pass.validity.tooShort) {
+        let p_pass_tooShort = document.createElement("p");
+        p_pass_tooShort.innerHTML = "Password is not long enough";
+        div_error.appendChild(p_pass_tooShort);
+    }
+
+    if (pass_confirm.validity.valueMissing) {
+        let p_pass_confirm_valueMissing = document.createElement("p");
+        p_pass_confirm_valueMissing.innerHTML = "Confirm password is missing";
+        div_error.appendChild(p_pass_confirm_valueMissing);
+    }
+    if (pass_confirm.value !== pass.value) {
+        let p_pass_confirm_equal = document.createElement("p");
+        p_pass_confirm_equal.innerHTML = "Passwords must match";
+        div_error.appendChild(p_pass_confirm_equal);
     }
 }
